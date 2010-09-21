@@ -4,7 +4,7 @@
 	<groupId>org.jbpm.dashboard</groupId>
 	<artifactId>jbpm-dashboard</artifactId>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>jbpm-dashboard</name>
 
 	<repositories>
@@ -12,36 +12,12 @@
 			<id>jboss</id>
 			<url>http://repository.jboss.com/maven2/</url>
 		</repository>
-		<repository>
-			<id>maven repo1</id>
-			<url>http://repo1.maven.org/maven2/</url>
-		</repository>
 	</repositories>
 
 
 	<!-- Dependencies -->
 	<dependencies>
 		<!-- from maven repo1 -->
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>el-api</artifactId>
-			<version>6.0.29</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>6.0.29</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>6.0.29</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>annotations-api</artifactId>
-			<version>6.0.29</version>
-		</dependency>
 		<!-- from JBoss repo -->
 		<dependency>
 			<groupId>javax.activation</groupId>
@@ -172,6 +148,7 @@
 			<groupId>javax.el</groupId>
 			<artifactId>el-api</artifactId>
 			<version>1.2</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.faces</groupId>
@@ -187,6 +164,13 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -194,7 +178,6 @@
 
 	<url>http://code.google.com/p/jbpm-dashboardA web based dashboard for view and managing jBPM processes. Based on jBoss' own jbpm jsf console.</url>
 	<scm>
-		<url>https://jbpm-dashboard.googlecode.com/svn/trunk/</url>
 	</scm>
 	<build>
 		<plugins>
@@ -204,10 +187,14 @@
 					<showDeprecation>false</showDeprecation>
 				</configuration>
 			</plugin>
-			<!-- <plugin> <groupId>net.sourceforge.maven-taglib</groupId> <artifactId>maven-taglib-plugin</artifactId> 
-				<executions> <execution> <goals> <goal>taglibdocjar</goal> </goals> </execution> 
-				</executions> <configuration> <taglib.src.dir>src/main/tld</taglib.src.dir> 
-				</configuration> </plugin> -->
+			<!--
+				<plugin> <groupId>net.sourceforge.maven-taglib</groupId>
+				<artifactId>maven-taglib-plugin</artifactId> <executions>
+				<execution> <goals> <goal>taglibdocjar</goal> </goals> </execution>
+				</executions> <configuration>
+				<taglib.src.dir>src/main/tld</taglib.src.dir> </configuration>
+				</plugin>
+			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
