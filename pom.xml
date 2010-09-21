@@ -154,11 +154,6 @@
 			<version>1.4</version>
 		</dependency>
 		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
 			<groupId>org.jbpm.jbpm3</groupId>
 			<artifactId>jbpm-identity</artifactId>
 			<version>3.3.1.GA</version>
@@ -182,13 +177,11 @@
 			<groupId>javax.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>1.2_13</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>1.2_13</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -223,6 +216,8 @@
 						<resource>
 							<directory>${basedir}/src/main/java</directory>
 							<directory>${basedir}/src/main/resources</directory>
+							<directory>${basedir}/src/main/scripts</directory>
+							<directory>${basedir}/src/main/webapp</directory>
 							<targetPath>WEB-INF/classes</targetPath>
 							<includes>
 								<include>**/*.properties</include>
