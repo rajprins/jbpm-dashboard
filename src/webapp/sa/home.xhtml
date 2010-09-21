@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:gd="http://gravel.jboss.org/jsf/1.0/data"
+	xmlns:ga="http://gravel.jboss.org/jsf/1.0/action"
+	xmlns:gs="http://gravel.jboss.org/jsf/1.0/simple"
+	xmlns:n="http://gravel.jboss.org/jsf/1.0/navigation"
+	xmlns:j4j="http://jbpm.org/jbpm4jsf/core">
+
+	<ui:composition template="../sa/t_loggedin.xhtml">
+	<ui:define name="menu">
+	
+			<!-- get overview information -->
+			<ga:responseActions>
+				<j4j:showProcessOverview 
+					procs="#{procs}" 
+					tasks="#{tasks}" 
+					jobs="#{jobs}"
+					users="#{users}"
+					groups="#{groups}"/>
+			</ga:responseActions>
+	 		
+			<h:form>
+			<table class="leftmenu">
+			<tbody>	
+				<tr class="leftmenuheader">
+					<th colspan="2"><h:outputText value="#{msgs['home.heading']}"/></th>
+				</tr>
+				<tr class="leftmenu">
+					<th><h:outputLink value="processes.jsf"><h:outputText value="#{msgs['home.processes']}"/></h:outputLink></th>					
+					<td><h:outputText value="#{procs}"/></td>
+				</tr>
+				<tr class="leftmenu">
+					<th><h:outputLink value="tasks.jsf"><h:outputText value="#{msgs['home.tasks']}"/></h:outputLink></th>
+					<td><h:outputText value="#{tasks}"/></td>
+				</tr>
+				<tr class="leftmenu">
+					<th><h:outputLink value="jobs.jsf"><h:outputText value="#{msgs['home.jobs']}"/></h:outputLink></th>
+					<td><h:outputText value="#{jobs}"/></td>
+				</tr>
+				<tr class="leftmenuheader">
+					<th colspan="2"><h:outputText value="#{msgs['home.userinfo']}"/></th>
+				</tr>
+				<tr class="leftmenu">
+					<th><h:outputLink value="identities.jsf?view=users"><h:outputText value="#{msgs['home.users']}"/></h:outputLink></th>
+					<td><h:outputText value="#{users}"/></td>
+				</tr>				
+				<tr class="leftmenu">
+					<th><h:outputLink value="identities.jsf?view=groups"><h:outputText value="#{msgs['home.groups']}"/></h:outputLink></th>
+					<td><h:outputText value="#{groups}"/></td>
+				</tr>								
+				<tr class="leftmenu">
+					<th><h:outputText value="#{msgs['home.loggedinas']}"/></th>
+					<td><ui:insert name="username"/></td>
+				</tr>
+				<tr class="leftmenuheader">
+					<th colspan="2"><h:outputText value="#{msgs['home.actions']}"/></th>
+				</tr>
+				<tr class="leftmenu">
+					<td colspan="2">
+                       <gs:ul>
+                       <gs:li>					
+							<h:commandLink value="#{msgs['top.logout']}">
+                    			<ga:logOut/>
+								<n:nav outcome="default" redirect="true"/>
+							</h:commandLink>
+						</gs:li>
+						</gs:ul>						
+					</td>
+				</tr>
+				<tr><th colspan="2"></th></tr>		
+			</tbody>
+			</table>
+			</h:form>
+		</ui:define>
+
+		<ui:define name="body">
+			<gs:div>
+				<h:graphicImage url="/images/jbpm_logo.png"/>
+			</gs:div>
+		</ui:define>
+	</ui:composition>
+
+</html>

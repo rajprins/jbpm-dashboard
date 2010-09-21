@@ -1,0 +1,717 @@
+/**********************************************************
+  General styles
+***********************************************************/
+
+
+/*
+Main colors:
+
+#003F8C: donker blauw
+#66ADDB: licht blauw
+#ECF4FE: heel licht blauw
+#DDDDDD: grijs
+#F8F8F8: licht grijs
+#EFEBDE: geelgrijs
+#3190CA: Atos blauw (font color)
+#FF9620: oranje
+#B7CB34: groen
+*/
+
+body {
+    font-weight:normal;
+    font-family:verdana,sans-serif;
+    font-size:10pt;
+    background-repeat:no-repeat;
+    background-color:#DDDDDD;
+    margin:0;
+    border-width:0;
+    padding:0;
+}
+
+html {
+    background-attachment:scroll;
+    background-repeat:no-repeat;
+    margin:0;
+    padding:0;
+    border-width:0;
+}
+
+button, input, select, option, textarea {
+    font-family:arial,helvetica,sans-serif;
+    font-weight:normal;
+    font-size:10pt;
+    line-height:normal;
+}
+
+select {
+    vertical-align:top;
+}
+
+form {
+    display:inline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    display:inline;
+}
+
+h1 {
+    font-size:16pt;
+}
+
+h2 {
+    font-size:14pt;
+}
+
+h3 {
+    font-size:11pt;
+}
+
+h4 {
+    font-size:10pt;
+}
+
+h5 {
+    font-size:8pt;
+}
+
+h6 {
+    font-size:6pt;
+}
+
+a {
+    cursor: pointer;
+    color: #003F8C;
+    text-decoration: underline;  
+}
+
+a:hover {
+    color: #3190CA;
+}
+
+
+div.centered {
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #66ADDB;	
+}
+
+hr {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #66ADDB;
+}
+
+
+.inputField {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #66ADDB;
+}	
+
+
+.flatbutton {
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:1px;
+	margin:5px;
+	border-color:#3190CA;
+	border-style: solid;
+	border-width: 1px;	
+	color:#3190CA;	
+	font-weight:normal;
+	background:#ECF4FE;
+    text-decoration:none;	
+	cursor:pointer;
+}
+
+
+.flatbutton:hover {
+	border-color:#FF9620;
+	border-width:1pt;
+}
+
+
+.gradientbutton {
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:1px;
+	margin:5px;
+	border-color:#3190CA;
+	border-style: solid;
+	border-width: 1px;	
+	color:#3190CA;	
+	font-weight:normal;
+	background:#ECF4FE;
+    text-decoration:none;	
+	cursor:pointer;
+	background:#66ADDB  url("../images/bluebar_light.bmp");
+	background-repeat:repeat-x;	
+}
+
+
+.gradientbutton:hover {
+	border-color:#FF9620;
+	border-width:1pt;
+}
+
+
+b {
+    font-weight:bold;
+}
+
+
+table.layout {
+    border-collapse:collapse;
+    width: auto;
+    background:#FFFFFF;
+}
+
+
+table.layout td {
+    margin:0px;
+    padding:0px;
+}
+
+/* achtergrond header */
+table.layout td.layouttop {
+	background:#F8F8F8;
+}
+
+
+div.layouttopLeft {
+	margin-top:10px;
+	margin-left:5px;
+	color:#3190CA;
+	font-size:20pt;
+	font-weight:lighter;
+	text-align:left;
+	background:#F8F8F8;
+	width:900px;
+}
+
+
+div.layouttopRight {
+	background:#F8F8F8;
+	text-align: right;
+	float:right;
+	position:relative;	
+}
+
+
+.layouttopBottom {
+	border-style:none;
+	border-collapse:collapse;
+}
+
+
+/* blue "tabbed" menu bar */
+table.layout td.layoutheader {
+	background:#66ADDB  url("../images/menubar.bmp");
+	background-repeat:repeat-x;
+	font-size: 8pt;
+	font-weight: lighter;
+    color:#FFFFFF;
+    border-style:none;
+    border-collapse:collapse;
+    height:30px;
+}
+
+
+.headermenu {
+    padding-left:8px;
+    padding-right:8px;
+    text-decoration:none;
+    color:#FFFFFF;
+    border-style:none;
+    border-collapse:collapse; 
+}
+
+
+.headermenu:hover {
+	background:url("../images/bluebar_dark_inv.bmp");
+	background-repeat:repeat-x;
+	cursor: pointer;
+	color:#FFFFFF;
+    padding-top:5px;
+    padding-bottom:5px;    
+	border-style:none;
+}
+
+
+/* algehele table footer */
+table.layout td.layoutfooter {
+	font-size:7pt;
+	font-weight:lighter;
+	text-align:center;
+    border-style:none;
+    border-collapse:collapse;
+	background-color:#EEEEEE;
+	color:#3190CA;
+	height:20px;
+	background:url("../images/bluebar_light.bmp");
+	background-repeat:repeat-x;
+}
+
+/* linker blok */
+table.layout td.layoutmenu {
+    vertical-align:top;
+	margin:10px;
+	padding:10px;
+    width:240px;
+    border-collapse:collapse;
+    border-style:none;
+ 	/*
+    border-right-style: solid;
+    border-right-width:1px;
+    border-color: #BBBBBB;
+    background-color:EFEFEF;
+    */
+ 	/*
+    border-right-style: solid;
+    border-right-width:1px;
+    border-color: #66ADDB;
+    background-color:#ECF4FE;
+    background-color:EFEBDE;
+    */
+}
+
+/* blokken in linker menu */
+table.leftmenu {
+    width:100%;
+    background:#ECF4FE;
+    border-style:solid;
+    border-color:#66ADDB;
+    border-width:1px;    
+	border-collapse:collapse;
+}
+
+
+/* rechterblok */
+table.layout td.layoutbody {
+    vertical-align:top;
+    padding:10px;
+    width:760px;
+    border-collapse:collapse;   
+}
+
+
+/* linkerblok table headers */
+tr.leftmenuheader th {
+    font-weight:bold;
+    font-size:10px;
+    text-align:left;
+    color:#000000;
+	background:url("../images/bluebar_light.bmp");
+	background-repeat:repeat-x;    
+    padding:3px;
+}
+
+/* menuopties (labels) links */
+tr.leftmenu th {
+    margin:0;
+    padding:0;
+    padding-left:10px;
+    text-align:left;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:normal;
+    white-space:nowrap;
+    color:#000000; 
+}
+
+tr.leftmenuspacer {
+	background-color:#FFFFFF;
+	color:#FFFFFF;
+	border-top-color:#66ADDB;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-bottom-color:#66ADDB;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+}
+
+
+/* Menu opties links  */
+tr.leftmenu td {
+	margin-left:10px;
+    vertical-align:top;
+    padding:3px;
+    text-align:left;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:normal;
+    white-space:nowrap;
+    text-align: left;
+}
+
+tr.leftmenu td ul {
+    margin:0;
+    padding:0;
+    padding-left:16px;
+    vertical-align:bottom;
+    list-style: circle;
+}
+
+.statusSuspended {
+    color:#aa6600;
+    font-weight:bold;
+}
+
+.statusRunning {
+    color:#00cc00;
+    font-weight:bold;
+}
+
+.statusEnded {
+    color:#66ADDB;
+    font-weight:bold;
+}
+
+.statusNotstarted {
+    color:#0066aa;
+    font-weight:bold;
+}
+
+
+/* inner table */
+table.results {
+    border-style:solid;
+    border-color:#66ADDB;
+    border-width:1px;    
+	border-collapse:collapse;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+table.results td, table.results th {
+    padding:3px;
+    font-size:10px;
+}
+
+table.results thead tr {
+    cursor:default;
+}
+
+table.results thead tr th {
+    text-align:left;
+	background:#66ADDB  url("../images/bluebar_dark.bmp");
+	background-repeat:repeat-x;
+    color:#000000;
+    font-size:10px;
+}
+
+table.results thead tr th b {
+    font-weight:normal;
+}
+
+/* column titles (not table header!) */
+table.results thead tr td {
+    text-align:left;
+    background-color:#ECF4FE;
+    color:#000000;
+    font-size:10px;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-bottom-color:#66ADDB;
+}
+
+table.results tbody.results tr {
+    background-color:#ECF4FE;
+}
+
+
+table.results tbody.results tr.even {
+    background-color:#EEEEFF;
+}
+
+table.results tbody.results tr.odd {
+    background-color:#FFFFFF;
+}
+
+table.results tbody.filter td {
+    text-align:left;
+    font-size:10px;
+    padding-bottom:1px;
+    padding-top:1px;
+    font-weight:normal;
+    background-color:#ECF4FE;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-bottom-color:#66ADDB;
+}
+
+table.results td {
+    border-right-width:1px;
+    border-right-style:solid;
+    border-right-color:#66ADDB;
+}
+
+table.results tbody.results th {
+    padding:3px;
+    text-align:left;
+    text-decoration:none;
+    font-weight:normal;
+    font-size:10px;
+    white-space:nowrap;
+    background-color:#ECF4FE; 
+    color:#000000;
+}
+
+table.results tbody.action tr {
+    background-color:#ECF4FE;
+}
+
+table.results tbody.action tr td {
+    border-top-color:#003F8C;
+    border-top-style:solid;
+    border-top-width:1px;
+}
+/* end inner table */
+
+table.msgs {
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:15px;
+    border-width:1px;
+    border-style:solid;
+    border-collapse:collapse;
+    border-color:#66ADDB;
+    font-size:10px;
+    width:400px;
+}
+
+table.msgs td {
+    padding-left:8px;
+    padding-right:8px;
+    border-bottom-width:1px;
+    border-bottom-color:#66ADDB;
+    border-bottom-style:dotted;
+}
+
+table.msgs thead th {
+    font-size:10px;
+}
+
+table.error thead th {
+    background-color:#CC0000;
+    border-color:#CC0000;    
+    border-width:1px;
+    border-style:solid;
+    border-collapse:collapse;  
+    color:#ffffff;
+}
+
+table.fatal thead th {
+    background-color:#CC0000;
+    border-color:#CC0000;    
+    border-width:1px;
+    border-style:solid;
+    border-collapse:collapse;  
+    color:#ffffff;
+}
+
+table.warn thead th {
+    background-color:#CCCC00;
+    color:#ffffff;
+}
+
+table.info thead th {
+    background-color:#66ADDB;
+    color:#ffffff;
+}
+
+.hidden {
+    display:none;
+}
+
+
+div.procimg {
+	position: relative;
+	height:500px;
+	width:700px;
+	overflow:auto;	
+	border-bottom-color: #66ADDB;	
+}
+
+div.pbox, div.pbox_s, div.pbox_e {
+    position:absolute;
+    border-width:1px;
+    border-style:solid;
+}
+
+div.pbox {
+    border-color:#0000ff;
+}
+
+div.pbox_s {
+    border-color:#aa6600;
+}
+
+div.pbox_e {
+    border-color:#66ADDB;
+}
+
+div.pboxs, div.pboxs_s, div.pboxs_e {
+    position:absolute;
+    border-right-width:1px;
+    border-right-style:solid;
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+}
+
+div.pboxs {
+    border-right-color:#9999ff;
+    border-bottom-color:#9999ff;
+}
+
+div.pboxs_s {
+    border-right-color:#ffaa99;
+    border-bottom-color:#ffaa99;
+}
+
+div.pboxs_e {
+    border-right-color:#660000;
+    border-bottom-color:#660000;
+}
+
+div.pboxce {
+    position:absolute;
+    overflow:hidden;
+}
+
+div.pboxc, div.pboxc_s, div.pboxc_e {
+    cursor:default;
+    font-size:10px;
+    white-space:nowrap;
+    color:#ffffff;
+    padding-left:3px;
+    padding-right:3px;
+    border-width:1px;
+    border-style:solid;
+}
+
+div.pboxc {
+    border-color:#0000ff;
+    background-color:#0000ff;
+}
+
+div.pboxc_s {
+    border-color:#aa6600;
+    background-color:#aa6600;
+}
+
+div.pboxc_e {
+    border-color:#66ADDB;
+    background-color:#66ADDB;
+}
+
+div.pboxc a, div.pboxc_s a, div.pboxc_e a {
+    color:#FFFFFF;
+    text-decoration:none;
+}
+
+div.pboxc a:hover, div.pboxc_s a:hover, div.pboxc_e a:hover {
+    text-decoration:underline;
+}
+
+span.comment {
+    display:block;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:4px;
+    padding-right:4px;
+    border-width:1px;
+    border-color:#66ADDB;
+    border-style:solid;
+    border-collapse:collapse;
+    margin-left:5px;
+    margin-right:5px;
+    background-color:#FFFFFF;
+    font-family:arial,helvetica,sans-serif;
+    margin-top:4px;
+    margin-bottom:4px;
+    overflow:auto;
+}
+
+textarea.comment {
+    margin-left:4px;
+    margin-right:4px;
+    width:480px;
+    height:80px;
+}
+
+
+/* task forms */
+table.dataform {
+    border-style:solid;
+    border-width:1px;
+    border-collapse:collapse;
+    border-color:#66ADDB;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:10px;
+    font-weight:normal;
+    background-color:#ECF4FE;
+    color:#000000;
+}
+
+table.dataform td, table.dataform th {
+	font-weight:normal;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+table.dataform thead tr th {
+    text-align:left;
+	background:#66ADDB  url("../images/bluebar_dark.bmp");
+	background-repeat:repeat-x;
+    font-weight:bold;
+}
+
+table.dataform tbody th {
+    text-align:left;
+    text-decoration:none;
+    white-space:nowrap;
+    width:130px;
+}
+
+table.dataform tbody td {
+    text-align:left;
+    text-decoration:none;
+    white-space:nowrap;
+    width:260px;
+}
+
+table.dataform tbody td.lastrow {
+	border-top-color:#66ADDB;
+	border-top-style:solid;
+	border-top-collapse:collapse;
+    text-align:left;
+    text-decoration:none;
+    white-space:nowrap;
+    width:260px;
+}
+/* end dataform  table */
+
+
+a.pager {
+    color:#FFFFFF;
+}
+
+a.pager:hover {
+    color:#FFFFFF;
+}
+
+span.pager {
+    font-weight:normal;
+	cursor:pointer;
+	text-decoration:underline;
+}
