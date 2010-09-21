@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:gd="http://gravel.jboss.org/jsf/1.0/data" 
+	xmlns:ga="http://gravel.jboss.org/jsf/1.0/action" 
+	xmlns:gs="http://gravel.jboss.org/jsf/1.0/simple" 
+	xmlns:n="http://gravel.jboss.org/jsf/1.0/navigation" 
+	xmlns:j4j="http://jbpm.org/jbpm4jsf/core">
+
+    <ui:composition template="../ua/t_base.xhtml">
+
+        <ui:define name="root_actions">
+            <gd:loadProperties path="access.properties" var="access"/>
+			<ui:insert name="actions"/>
+        </ui:define>
+
+        <ui:define name="top">
+            <gs:span rendered="#{! empty request.remoteUser}" style="float:right;vertical-align:bottom">
+                <h:form>
+                    <h:outputFormat value="#{msgs['top.loggedinas']}" style="font-size:8pt;margin-right:15px;color:#FFFFFF;">
+                        <f:param value="#{request.remoteUser}"/>
+                    </h:outputFormat>
+                    <h:commandLink value="#{msgs['top.logout']}" style="font-size:8pt;margin-right:5px;color:#FFFFFF;">
+                        <ga:logOut/>
+						<n:nav outcome="default" redirect="true"/>
+                    </h:commandLink>
+                </h:form>
+            </gs:span>
+        </ui:define>
+		
+		<ui:define name="loggedin">
+			<h:form>
+                    <h:outputFormat value="#{msgs['top.loggedinas']}">
+                        <f:param value="#{request.remoteUser}"/>
+                    </h:outputFormat>
+			</h:form>
+		</ui:define>
+		
+		<ui:define name="username">
+			<h:form>
+                    <h:outputText value="#{request.remoteUser}"/>
+			</h:form>
+		</ui:define>		
+
+		<!--
+		  OK, this is REALLY ugly... To do: get rid of the hardcoded styling. Why else do we have CSS ?
+		  -->
+        <ui:define name="header">
+			<!-- Link to Home -->
+            <h:outputLink styleClass="headermenu" value="home.jsf" 
+            		style="#{view.viewId == '/sa/home.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+                	<h:outputText value="#{msgs['topmenu.home']}"/>
+            </h:outputLink>		
+            <!-- Link to Processes overview page -->	
+            <ga:checkRole roles="#{role.process}">
+            <h:outputLink styleClass="headermenu" value="processes.jsf" 
+            		style="#{view.viewId == '/sa/processes.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+                	<h:outputText value="#{msgs['topmenu.processes']}"/>
+            </h:outputLink>
+            </ga:checkRole>
+            <!-- Link to Tasks management page -->
+            <ga:checkRole roles="#{role.tasks}">
+            <h:outputLink styleClass="headermenu" value="tasks.jsf" 
+            		style="#{view.viewId == '/sa/tasks.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+                	<h:outputText value="#{msgs['topmenu.tasks']}"/>
+            </h:outputLink>
+            </ga:checkRole>
+            <!-- Link to Jobs management page -->
+            <ga:checkRole roles="#{role.jobs}">
+            <h:outputLink styleClass="headermenu" value="jobs.jsf" 
+            		style="#{view.viewId == '/sa/jobs.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+                    <h:outputText value="#{msgs['topmenu.jobs']}"/>
+            </h:outputLink>
+            </ga:checkRole>
+            <!-- Link to User/Group management page -->
+            <ga:checkRole roles="#{role.identities}">
+            <h:outputLink styleClass="headermenu" value="identities.jsf" 
+            		style="#{view.viewId == '/sa/identities.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+                    <h:outputText value="#{msgs['topmenu.identities']}"/>
+            </h:outputLink>
+            </ga:checkRole>
+            <!-- Link to resources page -->
+            <ga:checkRole roles="#{role.resources}">
+            <h:outputLink styleClass="headermenu" value="resources.jsf" 
+            		style="#{view.viewId == '/sa/resources.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+                    <h:outputText value="#{msgs['topmenu.resources']}"/>
+            </h:outputLink>
+            </ga:checkRole>
+            <!-- Link to Configuration page -->
+            <ga:checkRole roles="#{role.configuration}">
+            <h:outputLink styleClass="headermenu" value="configuration.jsf" 
+            		style="#{view.viewId == '/sa/configuration.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+                    <h:outputText value="#{msgs['topmenu.configuration']}"/>
+            </h:outputLink>
+            </ga:checkRole>
+        </ui:define>
+    </ui:composition>
+</html>
