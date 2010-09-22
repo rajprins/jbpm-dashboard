@@ -14,7 +14,6 @@
 		</repository>
 	</repositories>
 
-
 	<dependencies>
 		<dependency>
 			<groupId>javax.activation</groupId>
@@ -180,10 +179,14 @@
 
 
 	<url>http://code.google.com/p/jbpm-dashboardA web based dashboard for view and managing jBPM processes. Based on jBoss' own jbpm jsf console.</url>
+
 	<scm>
 	</scm>
+
 	<build>
+		<finalName>jbpm-dashboard</finalName>
 		<plugins>
+			<!-- Compiler plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -216,6 +219,7 @@
 						<resource>
 							<directory>${basedir}/src/main/java</directory>
 							<directory>${basedir}/src/main/resources</directory>
+							<directory>${basedir}/src/main/tld</directory>
 							<targetPath>WEB-INF/classes</targetPath>
 							<includes>
 								<include>**/*.properties</include>
@@ -226,6 +230,27 @@
 							</includes>
 						</resource>
 					</webResources>
+				</configuration>
+			</plugin>
+			<!-- Tomcat plugin -->
+			<!--
+			1. Make sure that file %CATALINA_HOME%\conf\tomcat-users.xml looks something like this:
+			<tomcat-users>
+  				<role rolename="admin"/>
+  				<role rolename="manager"/>
+  				<user username="admin" password="admin" roles="admin,manager"/>
+			</tomcat-users>
+			2. Make sure that the specified port (in this case 9090) corresponds to your Tomcat config (server.xml)
+			 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<url>http://localhost:9090/manager</url>
+					<username>admin</username>
+					<password>admin</password>
+					<path>/jbpm-dashboard</path>
 				</configuration>
 			</plugin>
 		</plugins>
