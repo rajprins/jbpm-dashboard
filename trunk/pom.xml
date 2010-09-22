@@ -188,16 +188,26 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<showDeprecation>false</showDeprecation>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<!--
-				<plugin> <groupId>net.sourceforge.maven-taglib</groupId>
-				<artifactId>maven-taglib-plugin</artifactId> <executions>
-				<execution> <goals> <goal>taglibdocjar</goal> </goals> </execution>
-				</executions> <configuration>
-				<taglib.src.dir>src/main/tld</taglib.src.dir> </configuration>
-				</plugin>
-			-->
+			<!-- Taglib plugin -->
+			<plugin>
+				<groupId>net.sourceforge.maven-taglib</groupId>
+				<artifactId>maven-taglib-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>taglibdocjar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<taglib.src.dir>src/main/tld</taglib.src.dir>
+				</configuration>
+			</plugin>
+			<!-- War plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -211,22 +221,13 @@
 								<include>**/*.properties</include>
 								<include>**/*.xml</include>
 								<include>**/*.css</include>
-								<include>**/*.html</include>
+								<include>**/*.js</include>
 								<include>**/*.xhtml</include>
 							</includes>
 						</resource>
 					</webResources>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 
