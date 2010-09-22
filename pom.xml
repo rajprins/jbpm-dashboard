@@ -15,10 +15,7 @@
 	</repositories>
 
 
-	<!-- Dependencies -->
 	<dependencies>
-		<!-- from maven repo1 -->
-		<!-- from JBoss repo -->
 		<dependency>
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
@@ -132,8 +129,14 @@
 		<dependency>
 			<groupId>org.jbpm.jbpm3</groupId>
 			<artifactId>jbpm-identity</artifactId>
-			<version>3.3.1.GA</version>
+			<version>3.2.7</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jbpm.jbpm3</groupId>
+			<artifactId>jbpm-jpdl</artifactId>
+			<version>3.2.7</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.jboss.gravel</groupId>
 			<artifactId>gravel</artifactId>
@@ -203,8 +206,6 @@
 						<resource>
 							<directory>${basedir}/src/main/java</directory>
 							<directory>${basedir}/src/main/resources</directory>
-							<directory>${basedir}/src/main/scripts</directory>
-							<directory>${basedir}/src/main/webapp</directory>
 							<targetPath>WEB-INF/classes</targetPath>
 							<includes>
 								<include>**/*.properties</include>
