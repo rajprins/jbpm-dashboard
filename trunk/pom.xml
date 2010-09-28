@@ -135,7 +135,6 @@
 			<artifactId>jbpm-jpdl</artifactId>
 			<version>3.2.7</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.jboss.gravel</groupId>
 			<artifactId>gravel</artifactId>
