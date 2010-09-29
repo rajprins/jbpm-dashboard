@@ -4,12 +4,15 @@ import javax.el.ELContext;
 import javax.el.ValueExpression;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
-
+import org.apache.log4j.*;
 import org.jbpm.jsf.JbpmActionListener;
 import org.jbpm.jsf.JbpmJsfContext;
 
 
 public class ShowProcessOverviewActionListener implements JbpmActionListener {
+	
+	private final Logger log = Logger.getLogger(this.getClass());
+	
     private final ValueExpression procsExpression;
     private final ValueExpression tasksExpression;
     private final ValueExpression jobsExpression;
@@ -45,19 +48,18 @@ public class ShowProcessOverviewActionListener implements JbpmActionListener {
             int users  = context.getJbpmContext().getSession().createQuery("from org.jbpm.identity.User").list().size();
             int groups = context.getJbpmContext().getSession().createQuery("from org.jbpm.identity.Group").list().size();
             
-            /*
-            System.out.println("Processes: " +procs +"\n" +
+            log.info("Processes: " +procs +"\n" +
             				   "Tasks    : " +tasks +"\n" +
             		           "Jobs     : " +jobs +"\n" +
             		           "Users    : " +users +"\n" +
             		           "Groups   : " +groups);
-            */
             
             procsExpression.setValue(elContext, procs);
             tasksExpression.setValue(elContext, tasks);
             jobsExpression.setValue(elContext, jobs);
             usersExpression.setValue(elContext, users);
             groupsExpression.setValue(elContext, groups);
+            
             context.selectOutcome("success");
             
         } catch (Exception ex) {

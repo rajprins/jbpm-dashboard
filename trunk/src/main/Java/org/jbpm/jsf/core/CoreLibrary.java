@@ -110,6 +110,7 @@ public final class CoreLibrary extends AbstractTagLibrary {
         
         addTagHandler("showProcessOverview", ShowProcessOverviewHandler.class);
 
+        
         application.addComponent(UITaskForm.COMPONENT_TYPE, UITaskForm.class.getName());
         addComponent("taskForm", UITaskForm.COMPONENT_TYPE, UITaskForm.RENDERER_TYPE, TaskFormHandler.class);
 
