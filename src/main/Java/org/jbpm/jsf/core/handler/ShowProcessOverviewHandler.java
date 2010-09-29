@@ -7,6 +7,7 @@ import org.jbpm.jsf.core.action.ShowProcessOverviewActionListener;
 import com.sun.facelets.FaceletContext;
 import com.sun.facelets.tag.TagAttribute;
 import com.sun.facelets.tag.TagConfig;
+import org.apache.log4j.*;
 
 /**
 *
@@ -48,6 +49,9 @@ import com.sun.facelets.tag.TagConfig;
    }
 )
 public final class ShowProcessOverviewHandler extends AbstractHandler {
+	
+	private Logger log = Logger.getLogger(this.getClass());
+	
     private final TagAttribute procsTagAttribute;
     private final TagAttribute tasksTagAttribute;
     private final TagAttribute jobsTagAttribute;
@@ -56,6 +60,9 @@ public final class ShowProcessOverviewHandler extends AbstractHandler {
     
     public ShowProcessOverviewHandler(final TagConfig config) {
         super(config);
+
+    	log.info("Constructor called.");
+        
         procsTagAttribute  = getRequiredAttribute("procs");
         tasksTagAttribute  = getRequiredAttribute("tasks");
         jobsTagAttribute   = getRequiredAttribute("jobs");
@@ -64,6 +71,8 @@ public final class ShowProcessOverviewHandler extends AbstractHandler {
     }
 
     protected JbpmActionListener getListener(final FaceletContext ctx) {
+    	log.info("getListener called.");
+    	
         return new ShowProcessOverviewActionListener(
             getValueExpression(procsTagAttribute, ctx, int.class),
             getValueExpression(tasksTagAttribute, ctx, int.class),
