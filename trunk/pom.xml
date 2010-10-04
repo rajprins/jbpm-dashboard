@@ -241,6 +241,7 @@
 							<directory>${basedir}/src/main/scripts</directory>
 							<directory>${basedir}/src/main/java</directory>
 							<directory>${basedir}/src/main/resources</directory>
+							<directory>${basedir}/src/main/config</directory>
 							<directory>${basedir}/src/main/tld</directory>
 							<targetPath>WEB-INF/classes</targetPath>
 						</resource>
