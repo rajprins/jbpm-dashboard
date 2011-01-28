@@ -12,8 +12,8 @@
 
     <many-to-one name="taskInstance" 
                  column="TASKINSTANCE_" 
-                 class="org.jbpm.taskmgmt.exe.TaskInstance" 
-                 foreign-key="FK_LOG_TASKINST" />
+                 foreign-key="FK_LOG_TASKINST"
+                 index="IDX_LOG_TASKINST" />
   </subclass>
 
 </hibernate-mapping>

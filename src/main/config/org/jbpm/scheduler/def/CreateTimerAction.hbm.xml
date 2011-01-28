@@ -18,7 +18,8 @@
     <many-to-one name="timerAction" 
                  column="TIMERACTION_" 
                  foreign-key="FK_CRTETIMERACT_TA"
-                 cascade="all" />
+                 cascade="all"
+                 index="IDX_CRTETIMERACT_TA" />
 
   </subclass>
 

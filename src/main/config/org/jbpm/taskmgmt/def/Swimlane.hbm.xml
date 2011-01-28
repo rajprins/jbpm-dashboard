@@ -17,13 +17,14 @@
     <many-to-one name="assignmentDelegation" 
                  column="ASSIGNMENTDELEGATION_" 
                  foreign-key="FK_SWL_ASSDEL"
-                 cascade="all" />
+                 cascade="all"
+                 index="IDX_SWL_ASSDEL" />
     <many-to-one name="taskMgmtDefinition"   
                  column="TASKMGMTDEFINITION_" 
-                 foreign-key="FK_SWL_TSKMGMTDEF"/>
+                 foreign-key="FK_SWL_TSKMGMTDEF"
+                 index="IDX_SWL_TSKMGMTDEF" />
 
     <set name="tasks" cascade="all" inverse="true">
-      <cache usage="nonstrict-read-write"/>
       <key column="SWIMLANE_" />
       <one-to-many class="org.jbpm.taskmgmt.def.Task"/>
     </set>

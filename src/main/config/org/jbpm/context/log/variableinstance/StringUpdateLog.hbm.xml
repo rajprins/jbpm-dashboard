@@ -9,16 +9,8 @@
   <subclass name="org.jbpm.context.log.variableinstance.StringUpdateLog" 
             extends="org.jbpm.context.log.VariableUpdateLog"
             discriminator-value="U">
-    <property name="oldValue" column="OLDSTRINGVALUE_" length="4000">
-      <type name="string_max">
-        <param name="length">4000</param>
-      </type> 
-    </property>
-    <property name="newValue" column="NEWSTRINGVALUE_" length="4000">
-      <type name="string_max">
-        <param name="length">4000</param>
-      </type> 
-    </property>
+    <property name="oldValue" column="OLDSTRINGVALUE_" type="string" length="4000"/>
+    <property name="newValue" column="NEWSTRINGVALUE_" type="string" length="4000"/>
   </subclass>
 
 </hibernate-mapping>

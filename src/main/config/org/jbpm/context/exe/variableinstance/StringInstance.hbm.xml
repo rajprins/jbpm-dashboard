@@ -8,6 +8,6 @@
   <subclass name="org.jbpm.context.exe.variableinstance.StringInstance" 
             extends="org.jbpm.context.exe.VariableInstance" 
             discriminator-value="S">
-    <property name="value" type="string" column="STRINGVALUE_" length="4000"/>
+    <property name="value" column="STRINGVALUE_" type="string" length="4000"/>
   </subclass>
 </hibernate-mapping>

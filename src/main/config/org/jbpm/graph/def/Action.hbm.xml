@@ -7,7 +7,6 @@
   <class name="org.jbpm.graph.def.Action"
          table="JBPM_ACTION"
          discriminator-value="A">
-    <cache usage="nonstrict-read-write"/>
     <id name="id" column="ID_"><generator class="native" /></id>
     <discriminator type="char" />
     <!-- A : org.jbpm.graph.def.Action -->
@@ -24,7 +23,8 @@
     <many-to-one name="referencedAction" 
                  column="REFERENCEDACTION_"
                  cascade="all"
-                 foreign-key="FK_ACTION_REFACT" />
+                 foreign-key="FK_ACTION_REFACT"
+                 index="IDX_ACTION_REFACT" />
     <many-to-one name="actionDelegation"
                  column="ACTIONDELEGATION_"
                  cascade="all"  

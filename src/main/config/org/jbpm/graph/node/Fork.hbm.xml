@@ -12,7 +12,8 @@
     <many-to-one name="script"
                  column="SCRIPT_"
                  foreign-key="FK_NODE_SCRIPT"
-                 cascade="all" />
+                 cascade="all"
+                 index="IDX_NODE_SCRIPT" />
 
   </subclass>
 

@@ -57,6 +57,7 @@
         <xs:element ref="exception-handler"/>
       </xs:choice>
       <xs:attribute name="name" type="xs:string" use="required"/>
+      <xs:attribute name="end-complete-process" type="booleanType" use="optional" default="false"/>
     </xs:complexType>
   </xs:element>
 
@@ -99,7 +100,7 @@
   <xs:element name="node">
     <xs:complexType>
       <xs:sequence>
-        <xs:choice minOccurs="0">
+        <xs:choice minOccurs="0" maxOccurs="1">
           <xs:group ref="action-elements" />
         </xs:choice>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -375,9 +376,8 @@
   <!--  ##### -->
   <xs:element name="timer">
     <xs:complexType>
-      <xs:choice minOccurs="0">
-        <xs:element ref="action"/>
-        <xs:element ref="script"/>
+      <xs:choice minOccurs="0" maxOccurs="1">
+        <xs:group ref="action-elements" />
       </xs:choice>
       <xs:attribute name="duedate" type="xs:string" use="required" />
       <xs:attribute name="name" type="xs:string" />

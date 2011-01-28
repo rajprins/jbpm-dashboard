@@ -14,12 +14,14 @@
                  class="org.jbpm.bytes.ByteArray"
                  column="OLDBYTEARRAY_"
                  cascade="all"
-                 foreign-key="FK_LOG_OLDBYTES" />
+                 foreign-key="FK_LOG_OLDBYTES"
+                 index="IDX_LOG_OLDBYTES" />
     <many-to-one name="newValue" 
                  class="org.jbpm.bytes.ByteArray"
                  column="NEWBYTEARRAY_"
                  cascade="all"
-                 foreign-key="FK_LOG_NEWBYTES" />
+                 foreign-key="FK_LOG_NEWBYTES"
+                 index="IDX_LOG_NEWBYTES" />
   </subclass>
 
 </hibernate-mapping>

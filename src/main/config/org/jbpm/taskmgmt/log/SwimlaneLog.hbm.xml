@@ -12,8 +12,8 @@
 
     <many-to-one name="swimlaneInstance" 
                  column="SWIMLANEINSTANCE_" 
-                 class="org.jbpm.taskmgmt.exe.SwimlaneInstance" 
-                 foreign-key="FK_LOG_SWIMINST" />
+                 foreign-key="FK_LOG_SWIMINST"
+                 index="IDX_LOG_SWIMINST" />
   </subclass>
 
 </hibernate-mapping>

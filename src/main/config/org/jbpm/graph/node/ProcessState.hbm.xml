@@ -15,7 +15,6 @@
                  foreign-key="FK_PROCST_SBPRCDEF"
                  index="IDX_PSTATE_SBPRCDEF"/>
     <set name="variableAccesses" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="PROCESSSTATE_" foreign-key="FK_VARACC_PROCST"/>
       <one-to-many class="org.jbpm.context.def.VariableAccess" />
     </set>

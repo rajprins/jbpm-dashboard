@@ -8,7 +8,6 @@
 
   <class name="org.jbpm.context.def.VariableAccess" 
          table="JBPM_VARIABLEACCESS">
-    <cache usage="nonstrict-read-write"/>
     <id name="id" column="ID_"><generator class="native" /></id>
     
     <property name="variableName" column="VARIABLENAME_" />
