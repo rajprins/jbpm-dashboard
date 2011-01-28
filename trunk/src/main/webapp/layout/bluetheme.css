@@ -92,9 +92,9 @@ a:hover {
 
 div.centered {
 	width:1000px;
+	margin-top:10px;	
 	margin-left: auto;
 	margin-right: auto;
-	margin-top:10px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #66ADDB;	
@@ -166,8 +166,8 @@ b {
 
 
 table.layout {
+	table-layout: auto;
     border-collapse:collapse;
-    width: auto;
     background:#FFFFFF;
 }
 
@@ -191,7 +191,8 @@ div.layouttopLeft {
 	font-weight:lighter;
 	text-align:left;
 	background:#F8F8F8;
-	width:900px;
+	
+	/*width:900px;*/
 }
 
 
@@ -211,7 +212,7 @@ div.layouttopRight {
 
 /* blue "tabbed" menu bar */
 table.layout td.layoutheader {
-	background:#66ADDB  url("../images/menubar.bmp");
+	background:#66ADDB  url("../images/bluebar_dark.bmp");
 	background-repeat:repeat-x;
 	font-size: 8pt;
 	font-weight: lighter;
@@ -228,7 +229,7 @@ table.layout td.layoutheader {
     text-decoration:none;
     color:#FFFFFF;
     border-style:none;
-    border-collapse:collapse; 
+    border-collapse:collapse;
 }
 
 
@@ -250,34 +251,22 @@ table.layout td.layoutfooter {
 	text-align:center;
     border-style:none;
     border-collapse:collapse;
-	background-color:#EEEEEE;
 	color:#3190CA;
 	height:20px;
-	background:url("../images/bluebar_light.bmp");
+	background:#EEEEEE url("../images/bluebar_light.bmp");
 	background-repeat:repeat-x;
 }
 
 /* linker blok */
 table.layout td.layoutmenu {
+	table-layout: fixed;
     vertical-align:top;
 	margin:10px;
 	padding:10px;
     width:240px;
     border-collapse:collapse;
     border-style:none;
- 	/*
-    border-right-style: solid;
-    border-right-width:1px;
-    border-color: #BBBBBB;
-    background-color:EFEFEF;
-    */
- 	/*
-    border-right-style: solid;
-    border-right-width:1px;
-    border-color: #66ADDB;
-    background-color:#ECF4FE;
-    background-color:EFEBDE;
-    */
+    overflow: hidden;
 }
 
 /* blokken in linker menu */
@@ -288,6 +277,7 @@ table.leftmenu {
     border-color:#66ADDB;
     border-width:1px;    
 	border-collapse:collapse;
+	overflow: hidden;
 }
 
 
@@ -306,9 +296,9 @@ tr.leftmenuheader th {
     font-size:10px;
     text-align:left;
     color:#000000;
-	background:url("../images/bluebar_light.bmp");
-	background-repeat:repeat-x;    
     padding:3px;
+	background:#66ADDB url("../images/bluebar_dark.bmp");
+	background-repeat:repeat-x;    
 }
 
 /* menuopties (labels) links */
@@ -345,8 +335,9 @@ tr.leftmenu td {
     text-decoration:none;
     font-size:10px;
     font-weight:normal;
-    white-space:nowrap;
+    white-space:wrap;
     text-align: left;
+    overflow: hidden;
 }
 
 tr.leftmenu td ul {
@@ -400,7 +391,7 @@ table.results thead tr {
 
 table.results thead tr th {
     text-align:left;
-	background:#66ADDB  url("../images/bluebar_dark.bmp");
+	background:#66ADDB url("../images/bluebar_dark.bmp");
 	background-repeat:repeat-x;
     color:#000000;
     font-size:10px;
@@ -467,12 +458,16 @@ table.results tbody.action tr {
     background-color:#ECF4FE;
 }
 
+/*
 table.results tbody.action tr td {
     border-top-color:#003F8C;
     border-top-style:solid;
     border-top-width:1px;
 }
+*/
+
 /* end inner table */
+
 
 table.msgs {
     margin-left:auto;
@@ -481,7 +476,6 @@ table.msgs {
     border-width:1px;
     border-style:solid;
     border-collapse:collapse;
-    border-color:#66ADDB;
     font-size:10px;
     width:400px;
 }
@@ -498,6 +492,12 @@ table.msgs thead th {
     font-size:10px;
 }
 
+
+table.error {
+	border-color: #CC0000;
+}
+
+
 table.error thead th {
     background-color:#CC0000;
     border-color:#CC0000;    
@@ -506,6 +506,8 @@ table.error thead th {
     border-collapse:collapse;  
     color:#ffffff;
 }
+
+
 
 table.fatal thead th {
     background-color:#CC0000;
@@ -516,9 +518,17 @@ table.fatal thead th {
     color:#ffffff;
 }
 
+table.warn {
+	border-color: #CCCC00;
+}
+
 table.warn thead th {
     background-color:#CCCC00;
     color:#ffffff;
+}
+
+table.info {
+	border-color:#66ADDB;
 }
 
 table.info thead th {

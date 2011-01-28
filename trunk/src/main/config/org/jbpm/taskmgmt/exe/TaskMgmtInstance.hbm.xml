@@ -11,7 +11,8 @@
             discriminator-value="T">
     <many-to-one name="taskMgmtDefinition" 
                  column="TASKMGMTDEFINITION_"
-                 foreign-key="FK_TASKMGTINST_TMD"/>
+                 foreign-key="FK_TASKMGTINST_TMD"
+                 index="IDX_TASKMGTINST_TMD"/>
     <map name="swimlaneInstances" cascade="all" inverse="true">
       <!-- add on-delete for optimized deletion 
       <key column="TASKMGMTINSTANCE_" on-delete="cascade" />

@@ -14,11 +14,7 @@
     <version name="version" column="VERSION_" />
   
     <property name="name"         column="NAME_" />
-    <property name="description"  column="DESCRIPTION_" length="4000">
-      <type name="string_max">
-        <param name="length">4000</param>
-      </type> 
-    </property>
+    <property name="description" column="DESCRIPTION_" type="string" length="4000"/>
     <property name="actorId"      column="ACTORID_" index="IDX_TASK_ACTORID"/>
     <property name="create"       column="CREATE_" />
     <property name="start"        column="START_" />

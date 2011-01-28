@@ -8,16 +8,15 @@
 
   <class name="org.jbpm.taskmgmt.def.TaskController" 
          table="JBPM_TASKCONTROLLER">
-    <cache usage="nonstrict-read-write"/>
     <id name="id" column="ID_"><generator class="native" /></id>
   
     <many-to-one name="taskControllerDelegation" 
                  column="TASKCONTROLLERDELEGATION_" 
                  foreign-key="FK_TSKCTRL_DELEG"
-                 cascade="all" />
+                 cascade="all"
+                 index="IDX_TSKCTRL_DELEG" />
 
     <list name="variableAccesses" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="TASKCONTROLLER_" foreign-key="FK_VARACC_TSKCTRL" />
       <index column="INDEX_" />
       <one-to-many class="org.jbpm.context.def.VariableAccess" />

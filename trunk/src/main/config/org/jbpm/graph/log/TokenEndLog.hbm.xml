@@ -12,8 +12,8 @@
             
     <many-to-one name="child" 
                  column="CHILD_" 
-                 class="org.jbpm.graph.exe.Token" 
-                 foreign-key="FK_LOG_CHILDTOKEN" />
+                 foreign-key="FK_LOG_CHILDTOKEN"
+                 index="IDX_LOG_CHILDTOKEN" />
   </subclass>
 
 </hibernate-mapping>

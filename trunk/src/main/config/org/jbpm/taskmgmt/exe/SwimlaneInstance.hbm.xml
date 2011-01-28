@@ -19,7 +19,8 @@
                  index="IDX_SWIMLINST_SL"/>
     <many-to-one name="taskMgmtInstance" 
                  column="TASKMGMTINSTANCE_" 
-                 foreign-key="FK_SWIMLANEINST_TM"/>
+                 foreign-key="FK_SWIMLANEINST_TM"
+                 index="IDX_SWIMLANEINST_TM"/>
 
     <set name="pooledActors" 
          inverse="true" 

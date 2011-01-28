@@ -7,21 +7,21 @@
 <hibernate-mapping auto-import="false" default-access="field">
 
   <subclass name="org.jbpm.graph.log.TransitionLog" 
-            extends="org.jbpm.logging.log.ProcessLog"
+            extends="org.jbpm.logging.log.CompositeLog"
             discriminator-value="T">
             
     <many-to-one name="transition" 
                  column="TRANSITION_" 
-                 class="org.jbpm.graph.def.Transition" 
-                 foreign-key="FK_LOG_TRANSITION" />
+                 foreign-key="FK_LOG_TRANSITION"
+                 index="IDX_LOG_TRANSITION" />
     <many-to-one name="sourceNode" 
                  column="SOURCENODE_" 
-                 class="org.jbpm.graph.def.Node" 
-                 foreign-key="FK_LOG_SOURCENODE" />
+                 foreign-key="FK_LOG_SOURCENODE"
+                 index="IDX_LOG_SOURCENODE" />
     <many-to-one name="destinationNode" 
                  column="DESTINATIONNODE_" 
-                 class="org.jbpm.graph.def.Node" 
-                 foreign-key="FK_LOG_DESTNODE" />
+                 foreign-key="FK_LOG_DESTNODE"
+                 index="IDX_LOG_DESTNODE" />
   </subclass>
 
 </hibernate-mapping>

@@ -8,7 +8,6 @@
             discriminator-value="U" 
             extends="org.jbpm.graph.def.Node">
     <list name="nodes" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="SUPERSTATE_" />
       <list-index column="NODECOLLECTIONINDEX_" />
       <one-to-many class="org.jbpm.graph.def.Node" />

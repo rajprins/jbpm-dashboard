@@ -9,7 +9,10 @@
   <subclass name="org.jbpm.graph.log.ProcessStateLog" 
             extends="org.jbpm.graph.log.NodeLog"
             discriminator-value="Z">
-    <many-to-one name="subProcessInstance" column="NEWLONGVALUE_" class="org.jbpm.graph.exe.ProcessInstance" foreign-key="none" />
+
+    <many-to-one name="subProcessInstance"
+                 column="NEWLONGVALUE_"
+                 foreign-key="none" />
   </subclass>
 
 </hibernate-mapping>

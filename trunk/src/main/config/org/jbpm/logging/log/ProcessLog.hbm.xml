@@ -48,12 +48,12 @@
     <property name="date" column="DATE_" />
     <many-to-one name="token" 
                  column="TOKEN_" 
-                 class="org.jbpm.graph.exe.Token"
-                 foreign-key="FK_LOG_TOKEN" />
+                 foreign-key="FK_LOG_TOKEN"
+                 index="IDX_LOG_TOKEN" />
     <many-to-one name="parent" 
                  column="PARENT_" 
-                 class="org.jbpm.logging.log.CompositeLog" 
-                 foreign-key="FK_LOG_PARENT" />
+                 foreign-key="FK_LOG_PARENT"
+                 index="IDX_LOG_PARENT" />
   </class>
 
 </hibernate-mapping>

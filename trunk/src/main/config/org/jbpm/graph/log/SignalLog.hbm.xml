@@ -7,9 +7,13 @@
 <hibernate-mapping auto-import="false" default-access="field">
 
   <subclass name="org.jbpm.graph.log.SignalLog" 
-            extends="org.jbpm.logging.log.ProcessLog"
+            extends="org.jbpm.logging.log.CompositeLog"
             discriminator-value="S">
-    <many-to-one name="transition" column="TRANSITION_" class="org.jbpm.graph.def.Transition" foreign-key="FK_LOG_TRANSITION" />
+
+    <many-to-one name="transition"
+                 column="TRANSITION_"
+                 foreign-key="FK_LOG_TRANSITION"
+                 index="IDX_LOG_TRANSITION" />
   </subclass>
 
 </hibernate-mapping>

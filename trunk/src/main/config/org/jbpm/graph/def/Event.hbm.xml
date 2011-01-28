@@ -6,7 +6,6 @@
 <hibernate-mapping auto-import="false" default-access="field">
   <class name="org.jbpm.graph.def.Event" 
          table="JBPM_EVENT">
-    <cache usage="nonstrict-read-write"/>
     <id name="id" column="ID_"><generator class="native" /></id>
 
     <property name="eventType" column="EVENTTYPE_"/>
@@ -30,7 +29,6 @@
     </any>
 
     <list name="actions" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="EVENT_" />
       <list-index column="EVENTINDEX_" />
       <one-to-many class="org.jbpm.graph.def.Action" />

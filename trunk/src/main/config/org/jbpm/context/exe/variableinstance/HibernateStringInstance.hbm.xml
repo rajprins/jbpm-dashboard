@@ -10,7 +10,7 @@
             discriminator-value="I">
     <any name="value" id-type="string" cascade="save-update">
       <column name="STRINGIDCLASS_" />
-      <column name="STRINGVALUE_" />
+      <column name="STRINGVALUE_" length="4000"/>
     </any>
   </subclass>
 </hibernate-mapping>

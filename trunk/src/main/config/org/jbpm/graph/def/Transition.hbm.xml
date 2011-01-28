@@ -6,28 +6,21 @@
 <hibernate-mapping auto-import="false" default-access="field">
   <class name="org.jbpm.graph.def.Transition" 
          table="JBPM_TRANSITION">
-    <cache usage="nonstrict-read-write"/>
     <id name="id" column="ID_"><generator class="native" /></id>
 
     <!-- GRAPHELEMENT -->
     <property name="name" column="NAME_"/>
-    <property name="description"  column="DESCRIPTION_" length="4000">
-      <type name="string_max">
-        <param name="length">4000</param>
-      </type> 
-    </property>
+    <property name="description" column="DESCRIPTION_" type="string" length="4000"/>
     <many-to-one name="processDefinition" 
                  column="PROCESSDEFINITION_"
                  foreign-key="FK_TRANS_PROCDEF"
                  index="IDX_TRANS_PROCDEF"/>
     <map name="events" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="TRANSITION_" foreign-key="FK_EVENT_TRANS" />
       <index column="EVENTTYPE_" type="string" />
       <one-to-many class="org.jbpm.graph.def.Event" />
     </map>
-    <list name="exceptionHandlers" cascade="all" lazy="false">
-      <cache usage="nonstrict-read-write"/>
+    <list name="exceptionHandlers" cascade="all">
       <key column="TRANSITION_" foreign-key="none" />
       <list-index column="GRAPHELEMENTINDEX_" />
       <one-to-many class="org.jbpm.graph.def.ExceptionHandler" />

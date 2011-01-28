@@ -11,7 +11,6 @@
             discriminator-value="F">
   
     <map name="processFiles" table="JBPM_PROCESSFILES" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="FILEDEFINITION_" foreign-key="FK_BYTEARR_FILDEF" />
       <index column="NAME_" type="string" />
       <one-to-many class="org.jbpm.bytes.ByteArray" />

@@ -12,8 +12,8 @@
             
     <many-to-one name="node" 
                  column="NODE_" 
-                 class="org.jbpm.graph.def.Node" 
-                 foreign-key="FK_LOG_NODE" />
+                 foreign-key="FK_LOG_NODE"
+                 index="IDX_LOG_NODE" />
     <property name="enter"
               column="ENTER_" />
     <property name="leave"

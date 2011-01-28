@@ -16,8 +16,8 @@
 
     <many-to-one name="action"   
                  column="ACTION_" 
-                 cascade="none"
-                 foreign-key="FK_JOB_ACTION"/>
+                 foreign-key="FK_JOB_ACTION"
+                 index="IDX_JOB_ACTION"/>
     
     <any name="graphElement" id-type="long" cascade="none">
       <column name="GRAPHELEMENTTYPE_"/>

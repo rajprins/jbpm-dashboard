@@ -12,8 +12,8 @@
 
     <many-to-one name="node"   
                  column="NODE_" 
-                 cascade="none"
-                 foreign-key="FK_JOB_NODE"/>
+                 foreign-key="FK_JOB_NODE"
+                 index="IDX_JOB_NODE"/>
 
   </subclass>
 

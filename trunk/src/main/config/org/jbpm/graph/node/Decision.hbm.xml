@@ -12,7 +12,6 @@
     <property name="decisionExpression" column="DECISIONEXPRESSION_"/>
 
     <list name="decisionConditions" table="JBPM_DECISIONCONDITIONS">
-      <cache usage="nonstrict-read-write"/>
       <key column="DECISION_" foreign-key="FK_DECCOND_DEC"/>
       <list-index column="INDEX_" />
       <composite-element class="org.jbpm.graph.node.DecisionCondition">
@@ -22,10 +21,10 @@
     </list>
     
     <many-to-one name="decisionDelegation"
-                 class="org.jbpm.instantiation.Delegation"
                  column="DECISIONDELEGATION"
                  foreign-key="FK_DECISION_DELEG"
-                 cascade="all" />
+                 cascade="all"
+                 index="IDX_DECISION_DELEG" />
 
   </subclass>
 

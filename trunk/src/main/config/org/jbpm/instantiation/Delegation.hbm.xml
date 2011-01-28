@@ -6,18 +6,16 @@
 <hibernate-mapping auto-import="false" default-access="field">
   <class name="org.jbpm.instantiation.Delegation"
          table="JBPM_DELEGATION">
-    <cache usage="nonstrict-read-write" />
     <id name="id" column="ID_"><generator class="native" /></id>
 
-    <property name="className" column="CLASSNAME_" length="4000"/>
-    <property name="configuration" column="CONFIGURATION_" length="4000"/>
+    <property name="className" column="CLASSNAME_" type="string" length="4000" />
+    <property name="configuration" column="CONFIGURATION_" type="string" length="4000" />
     <property name="configType" column="CONFIGTYPE_"/>
     
     <many-to-one name="processDefinition" 
                  column="PROCESSDEFINITION_"
                  foreign-key="FK_DELEGATION_PRCD"
-                 index="IDX_DELEG_PRCD"
-                 cascade="none" />
+                 index="IDX_DELEG_PRCD" />
     
   </class>
 </hibernate-mapping>

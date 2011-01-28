@@ -10,7 +10,6 @@
          table="JBPM_MODULEDEFINITION"
          abstract="true" 
          discriminator-value="M">
-    <cache usage="nonstrict-read-write"/>
     <id name="id" column="ID_"><generator class="native" /></id>
     <discriminator type="char" column="CLASS_"/>
     <!-- M : org.jbpm.module.def.ModuleDefinition -->
@@ -22,7 +21,7 @@
     <!--  :  -->
     <!--  :  -->
     
-    <property name="name" column="NAME_" length="4000"/>
+    <property name="name" column="NAME_" type="string" length="4000"/>
     <many-to-one name="processDefinition" 
                  column="PROCESSDEFINITION_"
                  foreign-key="FK_MODDEF_PROCDEF"

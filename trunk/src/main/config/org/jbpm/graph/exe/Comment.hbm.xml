@@ -11,11 +11,7 @@
 
     <property name="actorId" column="ACTORID_"/>
     <property name="time" column="TIME_"/>
-    <property name="message" column="MESSAGE_" length="4000">
-      <type name="string_max">
-        <param name="length">4000</param>
-      </type> 
-    </property>
+    <property name="message" column="MESSAGE_" type="string" length="4000"/>
     <many-to-one name="token" 
                  column="TOKEN_" 
                  foreign-key="FK_COMMENT_TOKEN"

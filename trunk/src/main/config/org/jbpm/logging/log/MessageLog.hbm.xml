@@ -9,11 +9,7 @@
   <subclass name="org.jbpm.logging.log.MessageLog" 
             extends="org.jbpm.logging.log.ProcessLog"
             discriminator-value="M">
-    <property name="message" column="MESSAGE_" length="4000">
-      <type name="string_max">
-        <param name="length">4000</param>
-      </type> 
-    </property>
+    <property name="message" column="MESSAGE_" type="string" length="4000"/>
   </subclass>
 
 </hibernate-mapping>

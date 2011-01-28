@@ -7,9 +7,8 @@
   <subclass name="org.jbpm.graph.action.Script" 
             discriminator-value="S" 
             extends="org.jbpm.graph.def.Action">
-    <property name="expression" column="EXPRESSION_" length="4000" />
+    <property name="expression" column="EXPRESSION_" type="string" length="4000" />
     <set name="variableAccesses" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="SCRIPT_" foreign-key="FK_VARACC_SCRIPT"/>
       <one-to-many class="org.jbpm.context.def.VariableAccess" />
     </set>

@@ -11,7 +11,6 @@
     <property name="createTasks" column="CREATETASKS_" />
     <property name="endTasks" column="ENDTASKS_" />
     <set name="tasks" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="TASKNODE_" foreign-key="FK_TASK_TASKNODE" />
       <one-to-many class="org.jbpm.taskmgmt.def.Task" />
     </set>

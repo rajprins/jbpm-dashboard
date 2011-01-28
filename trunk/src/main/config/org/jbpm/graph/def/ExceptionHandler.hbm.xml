@@ -6,10 +6,9 @@
 <hibernate-mapping auto-import="false" default-access="field">
   <class name="org.jbpm.graph.def.ExceptionHandler" 
          table="JBPM_EXCEPTIONHANDLER">
-    <cache usage="nonstrict-read-write"/>
     <id name="id" column="ID_"><generator class="native" /></id>
 
-    <property name="exceptionClassName" column="EXCEPTIONCLASSNAME_" length="4000"/>
+    <property name="exceptionClassName" column="EXCEPTIONCLASSNAME_" type="string" length="4000" />
 
     <any name="graphElement" id-type="long" meta-type="char">
       <meta-value value="A" class="org.jbpm.taskmgmt.def.Task"/>
@@ -29,7 +28,6 @@
       <column name="GRAPHELEMENT_"/>
     </any>
     <list name="actions" cascade="all">
-      <cache usage="nonstrict-read-write"/>
       <key column="EXCEPTIONHANDLER_" foreign-key="FK_ACTION_EXPTHDL" />
       <list-index column="EXCEPTIONHANDLERINDEX_" />
       <one-to-many class="org.jbpm.graph.def.Action" />
