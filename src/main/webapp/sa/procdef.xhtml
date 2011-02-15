@@ -154,6 +154,8 @@
 <ui:define name="body">
     <gs:div>
         <ga:attribute name="rendered" value="#{pd != null}"/>
+        
+        <!-- process instances table -->
         <h:outputText>
             <ga:attribute name="rendered" value="#{viewMode == 'ins'}"/>
             <ui:decorate template="t_processinstances.xhtml">
@@ -165,6 +167,8 @@
                 </ui:define>
             </ui:decorate>
         </h:outputText>
+        
+		<!-- Tasks table -->        
         <h:outputText>
             <ga:attribute name="rendered" value="#{viewMode == 'task'}"/>
             <ui:decorate template="t_tasks.xhtml">
@@ -176,13 +180,15 @@
                     <f:param name="view" value="#{viewMode}"/>
                 </ui:define>
             </ui:decorate>
-        </h:outputText>
-        <div class="procimg">        
+        </h:outputText>  
+        
+		<!-- Process image -->
         <h:outputText>    
             <ga:attribute name="rendered" value="#{viewMode == 'img'}"/>
-            <img alt="[Process Image Not Available]" src="pi/#{id}.jpg" style="border-style:none;margin-left:auto;margin-right:auto"/>
+            <div class="procimg">
+            	<img alt="[Process Image Not Available]" src="pi/#{id}.jpg" style="border-style:none;margin-left:auto;margin-right:auto"/>
+        	</div>            
         </h:outputText>
-        </div>
     </gs:div>
 </ui:define>
 </ui:composition>

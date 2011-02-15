@@ -298,7 +298,7 @@ tr.leftmenuheader th {
     color:#000000;
     padding:3px;
 	background:#66ADDB url("../images/bluebar_dark.bmp");
-	background-repeat:repeat-x;    
+	background-repeat:repeat-x;
 }
 
 /* menuopties (labels) links */
@@ -545,8 +545,10 @@ div.procimg {
 	position: relative;
 	height:500px;
 	width:700px;
-	overflow:auto;	
-	border-bottom-color: #66ADDB;	
+	overflow:auto;
+	border-style: solid;
+	border-width:1px;
+	border-color: #66ADDB;
 }
 
 div.pbox, div.pbox_s, div.pbox_e {
@@ -556,15 +558,16 @@ div.pbox, div.pbox_s, div.pbox_e {
 }
 
 div.pbox {
-    border-color:#0000ff;
+    border-color:#009900; /*groen*/
 }
 
 div.pbox_s {
-    border-color:#aa6600;
+	/*bruin*/
+	border-color:#aa6600;
 }
 
 div.pbox_e {
-    border-color:#66ADDB;
+    border-color:#66ADDB; /*blauw*/
 }
 
 div.pboxs, div.pboxs_s, div.pboxs_e {
@@ -576,17 +579,23 @@ div.pboxs, div.pboxs_s, div.pboxs_e {
 }
 
 div.pboxs {
-    border-right-color:#9999ff;
+	/*paars*/
+	/*
+    border-right-color:#9999ff; 
     border-bottom-color:#9999ff;
+    */
+	border-right-color:#999999; /*grijs*/
+	border-bottom-color:#999999;
+    
 }
 
 div.pboxs_s {
-    border-right-color:#ffaa99;
+    border-right-color:#ffaa99; /*rose*/
     border-bottom-color:#ffaa99;
 }
 
 div.pboxs_e {
-    border-right-color:#660000;
+    border-right-color:#660000; /*donkerrood*/
     border-bottom-color:#660000;
 }
 
@@ -607,22 +616,22 @@ div.pboxc, div.pboxc_s, div.pboxc_e {
 }
 
 div.pboxc {
-    border-color:#0000ff;
-    background-color:#0000ff;
+    border-color:#009900; /*groen*/
+    background-color:#009900;
 }
 
 div.pboxc_s {
-    border-color:#aa6600;
+    border-color:#aa6600; /*bruin*/
     background-color:#aa6600;
 }
 
 div.pboxc_e {
-    border-color:#66ADDB;
-    background-color:#66ADDB;
+    border-color:#66ADDB; /*lichtblauw*/
+    background-color:#66ADDB; /*lichtblauw*/
 }
 
 div.pboxc a, div.pboxc_s a, div.pboxc_e a {
-    color:#FFFFFF;
+    color:#FFFFFF; /*wit*/
     text-decoration:none;
 }
 

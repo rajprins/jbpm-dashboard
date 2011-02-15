@@ -13,7 +13,7 @@
 	<ui:composition template="../sa/t_loggedin.xhtml">
 	
 	<ui:define name="menu">
-	<ga:checkRole roles="#{access.role.resources.leftmenu}">	
+	<ga:checkRole roles="#{access.role.components.leftmenu}">	
 			<h:form>
 			<table class="leftmenu">
 			<tbody>	
@@ -48,34 +48,9 @@
 
 
 	<ui:define name="body">
-			<ga:checkRole roles="#{access.role.resources.center}">
+			<ga:checkRole roles="#{access.role.components.center}">
 			<gs:div>
-				<table class="results">
-                    <thead>
-                        <tr>
-                        	<gs:th colspan="3">
-                        	Software Components
-                        	</gs:th>
-						</tr>
-						<tr>
-							<td style="width:150px">Component</td>
-							<td style="width:150px">Link</td>
-							<td style="width:150px">Action</td>
-						</tr>
-					</thead>
-					<tbody class="results">
-						<tr class="odd">
-							<td>jBPM 3.2.7</td>
-							<td>http://jbpm.org</td>
-							<td>Download</td>
-						</tr>
-						<tr class="even">
-							<td>jBPM 3.2.7</td>
-							<td>http://jbpm.org</td>
-							<td>Download</td>
-						</tr>						
-					</tbody>
-				</table>
+				<h:graphicImage url="/images/jbpm_logo.png"/>
 			</gs:div>
 			</ga:checkRole>
 	</ui:define>
