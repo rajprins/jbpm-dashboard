@@ -44,57 +44,42 @@
 			</h:form>
 		</ui:define>		
 
-		<!--
-		  OK, this is REALLY ugly... To do: get rid of the hardcoded styling. Why else do we have CSS ?
-		  -->
         <ui:define name="header">
-			<!-- Link to Home -->
-            <h:outputLink styleClass="headermenu" value="home.jsf" 
-            		style="#{view.viewId == '/sa/home.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+        	<!--
+			OK, this is REALLY ugly... To do: get rid of the hardcoded styling. Why else do we have CSS ?
+			-->
+            <h:outputLink styleClass="headermenu" value="home.jsf" style="#{view.viewId == '/sa/home.xhtml' ? 
+ 					'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
                 	<h:outputText value="#{msgs['topmenu.home']}"/>
-            </h:outputLink>		
-            <!-- Link to Processes overview page -->	
-            <ga:checkRole roles="#{role.process}">
-            <h:outputLink styleClass="headermenu" value="processes.jsf" 
-            		style="#{view.viewId == '/sa/processes.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+            </h:outputLink>			
+            <h:outputLink styleClass="headermenu" value="processes.jsf" style="#{view.viewId == '/sa/processes.xhtml' ? 
+ 					'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
                 	<h:outputText value="#{msgs['topmenu.processes']}"/>
             </h:outputLink>
-            </ga:checkRole>
-            <!-- Link to Tasks management page -->
-            <ga:checkRole roles="#{role.tasks}">
-            <h:outputLink styleClass="headermenu" value="tasks.jsf" 
-            		style="#{view.viewId == '/sa/tasks.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+            <h:outputLink styleClass="headermenu" value="tasks.jsf" style="#{view.viewId == '/sa/tasks.xhtml' ? 
+ 					'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
                 	<h:outputText value="#{msgs['topmenu.tasks']}"/>
             </h:outputLink>
-            </ga:checkRole>
-            <!-- Link to Jobs management page -->
-            <ga:checkRole roles="#{role.jobs}">
-            <h:outputLink styleClass="headermenu" value="jobs.jsf" 
-            		style="#{view.viewId == '/sa/jobs.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+            <ga:checkRole roles="#{access.role.jobs}">
+            <h:outputLink styleClass="headermenu" value="jobs.jsf" style="#{view.viewId == '/sa/jobs.xhtml' ? 
+ 					'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
                     <h:outputText value="#{msgs['topmenu.jobs']}"/>
             </h:outputLink>
             </ga:checkRole>
-            <!-- Link to User/Group management page -->
-            <ga:checkRole roles="#{role.identities}">
-            <h:outputLink styleClass="headermenu" value="identities.jsf" 
-            		style="#{view.viewId == '/sa/identities.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+            <ga:checkRole roles="#{access.role.identities}">
+            <h:outputLink styleClass="headermenu" value="identities.jsf" style="#{view.viewId == '/sa/identities.xhtml' ? 
+ 					'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
                     <h:outputText value="#{msgs['topmenu.identities']}"/>
             </h:outputLink>
             </ga:checkRole>
-            <!-- Link to resources page -->
-            <ga:checkRole roles="#{role.resources}">
-            <h:outputLink styleClass="headermenu" value="resources.jsf" 
-            		style="#{view.viewId == '/sa/resources.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+            <h:outputLink styleClass="headermenu" value="resources.jsf" style="#{view.viewId == '/sa/resources.xhtml' ? 
+ 					'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
                     <h:outputText value="#{msgs['topmenu.resources']}"/>
             </h:outputLink>
-            </ga:checkRole>
-            <!-- Link to Configuration page -->
-            <ga:checkRole roles="#{role.configuration}">
-            <h:outputLink styleClass="headermenu" value="configuration.jsf" 
-            		style="#{view.viewId == '/sa/configuration.xhtml' ? 'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
+            <h:outputLink styleClass="headermenu" value="configuration.jsf" style="#{view.viewId == '/sa/configuration.xhtml' ? 
+ 					'background:url(\'../images/bluebar_dark_inv.bmp\');padding-top:5px;padding-bottom:5px;border-style:none;' : ''}">
                     <h:outputText value="#{msgs['topmenu.configuration']}"/>
             </h:outputLink>
-            </ga:checkRole>
         </ui:define>
     </ui:composition>
 </html>
